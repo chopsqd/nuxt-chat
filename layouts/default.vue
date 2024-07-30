@@ -33,12 +33,11 @@
 import { mapState, mapMutations } from "vuex";
 export default {
   data: () => ({
-    drawer: true,
-    users: []
+    drawer: true
   }),
-  computed: mapState(["user"]),
+  computed: mapState(["user", "users"]),
   methods: {
-    ...mapMutations(['clearData']),
+    ...mapMutations(["clearData"]),
     exit() {
       this.$socket.emit("userLeft", this.user.id, () => {
         this.$router.push("/?message=leftChat");

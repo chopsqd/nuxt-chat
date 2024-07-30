@@ -26,5 +26,4 @@ async function start() {
     })
   })
 }
-
 start()
